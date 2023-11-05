@@ -2,15 +2,20 @@
 The code repository for Temporal-Adaptive Kernel Density Estimator
 
 #Package dependency:
+
 numpy
 scipy
 
 #Data:
+
 You would want a training data D_t \in \R^{T,n_t} as a list of numpy array for T time steps, n_t is the number of data at each time step, which could vary over time. You would also want evaluation D_test for evaluation, with the same time steps T as training data (pad it if you don't need that many time steps).
 
 #Usage:
+
 import ReTAKDE as TK
+
 estimator = TK.TAKDE(cutoff=cutoff)
+
 ests = estimator.Streaming_Estimation(D_test,D_t,width_selector = rule, weighting = weighting,cv=cv)
 
 #Parameter Description:
