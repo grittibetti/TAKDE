@@ -18,7 +18,7 @@ n = int((upper-lower)/inter)
 index = np.arange((lower+inter/2),(upper+inter/2),inter)
 
 #%% read data
-file1 = pd.read_csv('E:\Texas_AM_University\Research\CPS\python\Kalman_Filter\D1.txt',sep = '  ',header = None)
+file1 = pd.read_csv('D1.txt',sep = '  ',header = None)
 Data_1 = np.array(file1)
 temp1 = np.sqrt(Data_1[:,1]*Data_1[:,2])
 D1 = np.transpose(np.vstack((Data_1[:,0],temp1)))
@@ -26,7 +26,7 @@ data1 = mean_size(D1,1)
 
 #%% Wafer
 
-tsv_data = pd.read_csv("E:\Texas_AM_University\Research\CPS\python\Kalman_Filter\Wafer_TRAIN.tsv",sep='\t')
+tsv_data = pd.read_csv("Wafer_TRAIN.tsv",sep='\t')
 tsv_data = np.array(tsv_data)
 D = []
 for i in range(1,len(tsv_data[0])):
@@ -35,7 +35,7 @@ data1 = standard(D,upper=2,lower=0,ratio=0.8)
 
 #%% ECG
 
-tsv_data = pd.read_csv("E:\Texas_AM_University\Research\CPS\python\Kalman_Filter\ECGtest.tsv",sep='\t')
+tsv_data = pd.read_csv("ECGtest.tsv",sep='\t')
 tsv_data = np.array(tsv_data)
 D = []
 for i in range(1,len(tsv_data[0])):
